@@ -19,7 +19,6 @@ public class ChatController {
 
    @GetMapping("/chat")
    public ResponseEntity<String> chatMessage(@RequestParam(value = "q", required = true) String message){
-
       String resultResponse = chatClient.prompt(message).call().content();
       return ResponseEntity.ok(resultResponse);
    }
